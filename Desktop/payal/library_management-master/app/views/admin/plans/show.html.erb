@@ -1,0 +1,13 @@
+<h1><%= @plan.name %></h1>
+
+<p><%= @plan.detail%></p>
+
+<p><%= @plan.amount%></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_admin_plan_path(@plan) %></li>
+   <li><%= link_to "Destroy",admin_plan_path(@plan),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

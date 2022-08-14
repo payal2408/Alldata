@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Students lists</h3>
+			<%= link_to "Create student", new_student_path, class: "btn btn-primary mb-3" %>
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Email</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @students.each do |student| %>
+					<tr>
+						<td>
+							<%= student.name %>	
+						</td>
+						<td>
+							<%= student.email %>
+						</td>
+						<td>
+							<%= link_to "Show", student_path(student) %>|
+							<%= link_to "Edit", edit_student_path(student) %>|
+							<%= link_to "Destroy", student, method: :delete, class: 'btn btn-danger', data: { alert: "Are you sure?" } %>
+						</td>
+
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

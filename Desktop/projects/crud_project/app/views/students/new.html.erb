@@ -1,0 +1,32 @@
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="card p-4 shadow">
+				<h3>Create student details</h3>
+				<div class="card-body">
+					<%= form_with(model: @student) do |f| %>
+						<div class="form-group">
+							<%= f.label :name %>
+							<%= f.text_field :name, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :age %>
+							<%= f.text_field :age, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :email %>
+							<%= f.text_field :email, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :about %>
+							<%= f.text_area :about, class: "form-control", rows: "5" %>
+						</div>
+						<div class="action">
+							<%= f.submit "Submit", class: "btn btn-primary" %>
+						</div>
+					<% end %>
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>

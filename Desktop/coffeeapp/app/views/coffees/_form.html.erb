@@ -1,0 +1,27 @@
+<%= form_with(model: coffee) do |form| %>
+  <% if coffee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coffee.errors.count, "error") %> prohibited this coffee from being saved:</h2>
+
+      <ul>
+        <% coffee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coffe_name %>
+    <%= form.text_field :coffe_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

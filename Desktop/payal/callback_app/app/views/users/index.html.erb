@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<%= link_to "Add new user", new_user_path %>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Login</th>
+						<th scope="col">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+						<tr>
+							<td><%= user.name %></td>
+							<td><%= user.login %></td>
+							<td><%= user.email %></td>
+							<td>
+								<%= link_to "Show", user %>
+								<%= link_to "edit", edit_user_path(user) %>
+								<%= link_to "Delete", users_path, method: :delete, data: { alert: "Are you sure?" }  %>
+							</td>
+						</tr>
+					<% end %>	
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

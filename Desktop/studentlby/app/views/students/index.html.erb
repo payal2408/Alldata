@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<h1>Students</h1>
+<br>
+<br>
+<table>
+  <th><strong>Student Rights</strong></th>
+  <tr><td></td><tr>
+  <tr><td></td><tr>
+  <tr><td><strong>Books</strong></td><tr>
+  <tr><td><%= link_to 'View Books', books_path %></td></tr>
+  <tr><td></td><tr>
+  <tr><td></td><tr>
+</table>
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Clgname</th>
+      <th>Contact</th>
+      <th>Addresh</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.clgname %></td>
+        <td><%= student.contact %></td>
+        <td><%= student.addresh %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to "signout", destroy_user_session_path, method: :delete %>
+<%= link_to 'New Student', new_student_path %>

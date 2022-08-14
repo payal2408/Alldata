@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admins</h1>
+<table>
+  <th><strong>Student Rights</strong></th>
+  <tr><td></td><tr>
+  <tr><td></td><tr>
+  <tr><td><strong>Books</strong></td><tr>
+  <tr><td><%= link_to 'View Books', books_path %></td></tr>
+  <tr><td></td><tr>
+  <tr><td></td><tr>
+  <tr><td><%= link_to 'Add Books', new_book_path %></td></tr>
+</table>
+<%= link_to 'View Student', students_path %></td></tr>
+<%= link_to 'New Student', new_student_path %>
+
+<%= link_to "signout", destroy_user_session_path, method: :delete %>
+
